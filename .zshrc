@@ -1,6 +1,7 @@
 # Git aliases
 # Inspired by https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/git/git.plugin.zsh
 alias g='git'
+alias gl='git --no-pager log --decorate=short --pretty=oneline -n10'
 alias gco='git checkout'
 alias gcb='git checkout -b'
 alias gcm='git checkout $(git_main_branch)'

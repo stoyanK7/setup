@@ -7,10 +7,19 @@ if ! command -v git &> /dev/null; then
     exit 1
 fi
 
-git config --global user.name "name"  # Replace this
-git config --global user.email "email"  # Replace this
+read -p "Enter your name: " name
+read -p "Enter your email: " email
+read -p "Enter SSH key path (default: ~/.ssh/github.pub): " ssh_key_path
+
+if [ ! -f "$ssh_key_path" ]; then
+    echo "SSH key path does not exist: $ssh_key_path"
+    exit 1
+fi
+
+git config --global user.name "$name"
+git config --global user.email "$email"
 git config --global commit.gpgsign true
-git config --global user.signingkey ~/.ssh/git_key.pub
+git config --global user.signingkey "$ssh_key_path"
 git config --global core.editor nano
 git config --global core.autocrlf input
 git config --global init.defaultBranch main

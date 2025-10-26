@@ -1,0 +1,121 @@
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "palette": {
+        "black": "#111111",
+        "white": "#f7f7f7"
+    },
+    "console_title_template": "{{if .Root}}[root] {{end}}{{.Shell}} in {{.Path}}",
+    "blocks": [
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "segments": [
+                {
+                    "type": "os",
+                    "template": " {{.Icon}}\u2800",
+                    "style": "plain",
+                    "foreground": "p:white",
+                    "background": "transparent",
+                    "properties": {
+                        "linux": "\uf17c",
+                        "macos": "\uf179",
+                        "ubuntu": "\uf31b",
+                        "windows": "\ue62a"
+                    }
+                },
+                // {
+                //     "type": "shell",
+                //     "style": "plain",
+                //     "template": " \uf489 {{.Name}}\u2800",
+                //     "foreground": "p:white",
+                //     "background": "p:black"
+                // },
+                {
+                    "template": " \uf007 {{.UserName}} ",
+                    "foreground": "p:black",
+                    "background": "p:white",
+                    "type": "session",
+                    "style": "plain"
+                },
+                {
+                    "properties": {
+                        "folder_icon": "\uf07b",
+                        "folder_separator_template": "<#2dd4bf> » </>",
+                        "home_icon": "\uf0e7",
+                        "style": "agnoster"
+                    },
+                    "template": " {{.Path}} ",
+                    "foreground": "p:white",
+                    "background": "p:black",
+                    "type": "path",
+                    "style": "plain"
+                },
+                {
+                    "properties": {
+                        "branch_icon": "\ue725 "
+                    },
+                    "template": " {{.HEAD}}\u2800",
+                    "foreground": "#3e2c00",
+                    "background": "#F1502F",
+                    "type": "git",
+                    "style": "plain"
+                },
+                {
+                    "template": " \ued1b {{.Full}} ",
+                    "foreground": "#FFD43B",
+                    "background": "#3776AB",
+                    "type": "python",
+                    "style": "powerline"
+                }
+            ]
+        },
+        {
+            "type": "prompt",
+            "alignment": "right",
+            "segments": [
+                {
+                    "properties": {
+                        "style": "austin",
+                        "threshold": 0
+                    },
+                    "template": "{{.FormattedMs}}",
+                    "foreground": "#b3ffde",
+                    "background": "transparent",
+                    "type": "executiontime",
+                    "style": "plain"
+                },
+                {
+                    "type": "time",
+                    "template": "<p:white> · </>{{.CurrentDate | date .Format}}",
+                    "style": "plain",
+                    "foreground": "#b3ffde",
+                    "background": "transparent",
+                    "properties": {
+                        "time_format": "02/01/06 15:04"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "segments": [
+                {
+                    "properties": {
+                        "always_enabled": true
+                    },
+                    "template": "\uf105",
+                    "foreground": "p:white",
+                    "background": "transparent",
+                    "type": "status",
+                    "style": "plain",
+                    "foreground_templates": [
+                        "{{if gt .Code 0}}#ff3030{{end}}"
+                    ]
+                }
+            ]
+        }
+    ],
+    "version": 3,
+    "final_space": true
+}

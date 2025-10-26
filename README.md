@@ -2,6 +2,7 @@
 
 ## Install Software
 
+- [Logseq](https://logseq.com/)
 - [lsd](https://github.com/lsd-rs/lsd)
 - [bat](https://github.com/sharkdp/bat)
   - Check if executable is `bat` or `batcat`
@@ -27,3 +28,22 @@ cp .gitconfig ~/.gitconfig
 ```
 
 Make sure to set name, email and ssh key in `~/.gitconfig`.
+
+## Logseq Plugins
+
+- AwesomeLinks
+- Copy Code
+- Bullet Threading
+- Journals Calendar
+- Tabs
+
+## Logseq Theme
+
+- Customized GitHub Theme
+
+## Firefox Extensions
+
+- uBlock Origin
+- Dark Reader
+- ColorZilla
+- Copy as Markdown

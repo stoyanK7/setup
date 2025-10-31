@@ -29,6 +29,7 @@
 [interactive]
     diffFilter = delta --color-only
 [delta]
+    features = mantis-shrimp
     side-by-side = false
     line-numbers = true
     navigate = true

@@ -47,3 +47,5 @@ Make sure to set name, email and ssh key in `~/.gitconfig`.
 - Dark Reader
 - ColorZilla
 - Copy as Markdown
+- Toggle browser theme
+- SponsorBlock for YouTube

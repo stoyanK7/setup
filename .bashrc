@@ -54,4 +54,6 @@ export PATH="$PATH:/home/.../.local/bin"
 export HISTSIZE=1000000
 export HISTFILESIZE=1000000
 
+source /etc/bash_completion
+
 eval "$(oh-my-posh init bash --config ~/.misc/oh-my-posh.json)"

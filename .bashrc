@@ -7,7 +7,30 @@ function git_current_branch() {
 }
 
 alias g='git'
-alias gl='git --no-pager log --decorate=short --pretty=oneline -n10'
+gl() {
+  # Check whether -n or --max-count is already present
+  local has_n=false
+  for arg in "$@"; do
+    case "$arg" in
+      -n*|--max-count*)
+        has_n=true
+        ;;
+    esac
+  done
+
+  # Build args, inserting -n25 if missing
+  local args=()
+  if ! $has_n; then
+    args+=("-n25")
+  fi
+  args+=("$@")
+
+  git --no-pager log --decorate=short \
+    --pretty=format:"%x1b[36m%h%x1b[0m | %s | %x1b[33m%cr%x1b[0m | %x1b[32m%an%x1b[0m | %x1b[35m%d%x1b[0m" \
+    --color=always \
+    "${args[@]}" \
+  | column -t -s "|"
+}
 alias gco='git checkout'
 alias gcb='git checkout -b'
 alias gcm='git checkout $(git_default_branch)'
